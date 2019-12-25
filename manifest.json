@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+
+	"version": "0.0.1",
+    "name": "1 click copy",
+    "description": "Get Title And URL with one click",
+    "author": "fuyuton",
+
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["script.js"],
+		"run_at": "document_end"
+	}],
+	
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+
+    "browser_action": {
+        "default_title": "1 click copy"
+    },
+
+    "permissions": [
+    	"tabs",
+    	"activeTab",
+    	"background"
+	]
+}
