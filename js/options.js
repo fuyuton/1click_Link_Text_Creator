@@ -1,15 +1,15 @@
 $(function(){
 
-	// ƒZ[ƒuƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚ç
-	// İ’è‚ğƒ[ƒJƒ‹ƒXƒgƒŒ[ƒW‚É•Û‘¶‚µ
-	// İ’èƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚é
+	// ã‚»ãƒ¼ãƒ–ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸã‚‰
+	// è¨­å®šã‚’ãƒ­ãƒ¼ã‚«ãƒ«ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã«ä¿å­˜ã—
+	// è¨­å®šã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹
 	$("#save").click(function () {
 		localStorage["link_format"] = $("#link_format").val();
 		localStorage["new_line"] = $("#new_line").val();
 		window.close();
 	});
 
-	// ƒIƒvƒVƒ‡ƒ“‰æ–Ê‚Ì‰Šú’l‚ğİ’è‚·‚é
+	// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ç”»é¢ã®åˆæœŸå€¤ã‚’è¨­å®šã™ã‚‹
 	if (localStorage["link_format"]) {
 		$("#link_format").val(localStorage["link_format"]);
 	}
