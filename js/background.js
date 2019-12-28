@@ -31,15 +31,39 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     Data.URL = tab.url;
 
 	var copyevent = function(e){
-
-	    e.clipboardData.setData("text/plain" , Data.Title+" "+Data.URL+"\n");    
+	
+		switch (localStorage["link_format"]) {
+			case 'HTML':
+				format = "text/plain";
+				str = "<a href=" + Data.URL + ">" + Data.Title + "</a>";
+				break;
+			case 'Markdown':
+				format = "text/plain";
+				str = "[" + Data.Title + "](" + Data.URL+ ")";
+				break;
+			case 'Text':
+				format = "text/plain";
+				str = Data.Title+" "+Data.URL;
+				break;
+			default:
+				format = "text/plain";
+				str = Data.Title+" "+Data.URL;
+		}
+		
+		if (localStorage["new_line"]) {
+			str = str + "\n"
+		}
+		// クリップボードに書き込む
+	    e.clipboardData.setData(format , str);
+	    
 	    // 本来のイベントをキャンセル
-	    e.preventDefault();
-	    // 終わったら一応削除
+	    e.preventDefault()
+	    
+	    // 終わったらイベントを削除
 	    document.removeEventListener("copy", copyevent);
 	}
 
-	// コピーのイベントが発生したときに、クリップボードに書き込むようにしておく
+	// コピーのイベントが発生したときに、copyeventを実行する
 	document.addEventListener("copy" , copyevent);
 	
 	// コピー
