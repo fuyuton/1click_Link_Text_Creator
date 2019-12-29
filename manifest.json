@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
 
-	"version": "0.0.2",
+	"version": "0.0.3",
     "name": "1click link creator",
     "description": "Get Title And URL with one click",
     "author": "fuyuton",
