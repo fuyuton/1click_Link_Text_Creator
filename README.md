@@ -1,4 +1,4 @@
-# 1 click copy
+# 1click link creator
 
 ## License
 MIT
