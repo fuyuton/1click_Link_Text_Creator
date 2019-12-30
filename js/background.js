@@ -30,8 +30,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     Data.Title = tab.title;
     Data.URL = tab.url;
 
-	var copyevent = function(e){
-		//chrome.storage を利用したchromeへのデータ保存 - Qiita https://qiita.com/shimutaya/items/e8835d6ce794ef6c73cf
+	var copyEvent = function(e){
 
 		switch (localStorage["link_format"]) {
 			case 'HTML':
@@ -51,7 +50,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 				str = Data.Title+" "+Data.URL;
 		}
 		
-		if (localStorage["new_line"] == 1) {
+		if (!localStorage["new_line"] || localStorage["new_line"] == 1) {
 			str = str + "\n"
 		}
 		// クリップボードに書き込む
@@ -61,11 +60,11 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	    e.preventDefault()
 	    
 	    // 終わったらイベントを削除
-	    document.removeEventListener("copy", copyevent);
+	    document.removeEventListener("copy", copyEvent);
 	}
 
-	// コピーのイベントが発生したときに、copyeventを実行する
-	document.addEventListener("copy" , copyevent);
+	// コピーのイベントが発生したときに、copyEventを実行する
+	document.addEventListener("copy" , copyEvent);
 	
 	// コピー
 	document.execCommand("copy");
