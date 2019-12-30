@@ -1,11 +1,11 @@
 {
     "manifest_version": 2,
 
-	"version": "0.0.3",
-    "name": "1click link creator",
-    "description": "Get Title And URL with one click",
+	"version": "0.1.0",
+    "name": "1click Link Text Creator",
+    "description": "タイトルとURLのリンクテキストを1クリックで作ります",
     "author": "fuyuton",
-
+	
 	"content_scripts": [{
 		"matches": ["<all_urls>"],
 		"js": ["js/script.js"],
@@ -16,16 +16,22 @@
 		"scripts": ["js/jquery-3.3.1.min.js", "js/background.js"],
 		"persistent": false
 	},
-
+	
     "browser_action": {
-        "default_title": "1 click copy"
+        "default_title": "1click Link Text Creator",
+        "default_icon": "img/icon-16.png"
     },
     
     "options_page": "options.html",
-
+	
     "permissions": [
     	"tabs",
     	"activeTab",
     	"background"
-	]
+	],
+	
+	"icons" : {
+	    "128": "img/icon-128.png"
+	  }
+  
 }
