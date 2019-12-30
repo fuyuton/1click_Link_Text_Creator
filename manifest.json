@@ -3,7 +3,7 @@
 
 	"version": "0.1.0",
     "name": "1click Link Text Creator",
-    "description": "Create Title and URL link text with 1click",
+    "description": "Create Title and URL link text with 1click.",
     "author": "fuyuton",
 	
 	"content_scripts": [{
@@ -24,16 +24,16 @@
     
     "options_page": "options.html",
 	
-    "permissions": [
-    	"tabs",
-    	"activeTab",
-    	"background"
-	],
-	
 	"icons" : {
 		"16": "img/icon-16.png",
 		"48": "img/icon-48.png",
 	    "128": "img/icon-128.png"
-	  }
-  
+	},
+	
+	"permissions": [
+		"tabs",
+		"background",
+		"activeTab"
+	]
+	
 }
